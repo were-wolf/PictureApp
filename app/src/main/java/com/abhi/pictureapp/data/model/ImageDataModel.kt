@@ -10,26 +10,26 @@ import kotlinx.android.parcel.Parcelize
 data class ImageDataModel (
 
     @field:SerializedName("copyright")
-    var copyright: String? = null,
+    val copyright: String? = null,
 
     @field:SerializedName("date")
-    var date: String? = null,
+    val date: String? = null,
 
     @field:SerializedName("explanation")
-    var explanation: String? = null,
+    val explanation: String? = null,
 
     @field:SerializedName("hdurl")
-    var hdurl: String? = null,
+    val hdurl: String? = null,
 
     @field:SerializedName("media_type")
     val media_type: String? = null,
 
     @field:SerializedName("service_version")
-    var service_version: String? = null,
+    val service_version: String? = null,
 
     @field:SerializedName("title")
-    var title: String? = null,
+    val title: String? = null,
 
     @field:SerializedName("url")
-    var url: String? = null
+    val url: String? = null
 ) : Parcelable

@@ -11,6 +11,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.row_image.view.*
 
+// image adapter for home page
 
 class ImageAdapter(val imageList: ArrayList<ImageDataModel>, private val clickListener: (Int) -> Unit) :
     RecyclerView.Adapter<ImageViewHolder>() {
