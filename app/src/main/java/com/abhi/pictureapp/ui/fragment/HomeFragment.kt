@@ -1,5 +1,6 @@
 package com.abhi.pictureapp.ui.fragment
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,9 @@ import com.abhi.pictureapp.data.model.ImageDataListModel
 import com.abhi.pictureapp.data.model.ImageDataModel
 import com.abhi.pictureapp.databinding.FragmentHomeBinding
 import com.abhi.pictureapp.ui.adapter.ImageAdapter
+import com.abhi.pictureapp.util.setProgressDialog
+import com.abhi.pictureapp.util.showErrorToast
+import com.abhi.pictureapp.util.showSuccessToast
 import com.abhi.pictureapp.viewmodel.HomeViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -30,6 +34,7 @@ class HomeFragment : Fragment() {
     private lateinit var bindingFragment: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
     private lateinit var imageAdapter: ImageAdapter
+    private lateinit var dialog: Dialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +51,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dialog = requireActivity().setProgressDialog()
         viewModel.fetchImageListFromJson()
         observeData()
     }
@@ -58,11 +64,12 @@ class HomeFragment : Fragment() {
         })
 
         viewModel.isLoading.observe(viewLifecycleOwner, Observer {
-
+            if (it) dialog.show()
+            else dialog.hide()
         })
 
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer {
-
+            requireActivity().showErrorToast(it)
         })
     }
 
@@ -89,6 +96,7 @@ class HomeFragment : Fragment() {
         position: String,
         imageList: ArrayList<ImageDataModel>
     ) {
+        requireActivity().showSuccessToast("Opening the details")
         val imageDataListModel = ImageDataListModel(imageList)
         imageDataListModel.imageDataListModel =  imageList
         val action =

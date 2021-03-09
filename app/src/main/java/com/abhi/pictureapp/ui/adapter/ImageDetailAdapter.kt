@@ -53,7 +53,6 @@ class ImageDetailAdapter(
         tvServiceVersion.text = imageList[position].service_version
 
         val optionsImage: RequestOptions = RequestOptions()
-            .fitCenter()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .priority(Priority.HIGH)
 
