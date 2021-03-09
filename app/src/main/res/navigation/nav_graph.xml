@@ -44,6 +44,14 @@
         android:label="ImageDetailsFragment"
         tools:layout="@layout/fragment_image_detail">
 
+        <argument
+            android:name="position"
+            app:argType="string" />
+
+        <argument
+            android:name="data"
+            app:argType="com.abhi.pictureapp.data.model.ImageDataListModel" />
+
     </fragment>
 
 </navigation>

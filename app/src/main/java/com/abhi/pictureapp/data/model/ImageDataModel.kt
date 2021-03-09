@@ -1,7 +1,12 @@
 package com.abhi.pictureapp.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+// json model
+
+@Parcelize
 data class ImageDataModel (
 
     @field:SerializedName("copyright")
@@ -27,4 +32,4 @@ data class ImageDataModel (
 
     @field:SerializedName("url")
     var url: String? = null
-)
+) : Parcelable

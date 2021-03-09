@@ -2,15 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_20">
 
 
     <ImageView
-        android:id="@+id/imagePreview"
+        android:id="@+id/imgPreview"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_150"
         android:layout_marginTop="0dp"
-        android:scaleType="fitXY"
+        android:src="@drawable/bg_splash_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

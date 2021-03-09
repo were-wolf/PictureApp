@@ -13,6 +13,8 @@ import com.abhi.pictureapp.databinding.FragmentSplashBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+// landing page
+
 class SplashFragment : Fragment() {
 
     private lateinit var bindingFragment: FragmentSplashBinding

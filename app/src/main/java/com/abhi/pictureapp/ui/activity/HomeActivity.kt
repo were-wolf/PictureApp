@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.navigation.findNavController
 import com.abhi.pictureapp.R
 
+// image adapter for home page
+
 class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
